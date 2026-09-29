@@ -47,7 +47,11 @@ export const metadata: Metadata = {
   icons: { icon: "/setuai-logo.webp" },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
       <html
