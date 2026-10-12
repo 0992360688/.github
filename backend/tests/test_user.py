@@ -10,9 +10,15 @@ def test_create_and_get_user(client):
     assert "hashed_password" not in body
 
     user_id = body["id"]
+    assert body["total_xp"] == 0
+    assert body["level"] == 1
+
     get_response = client.get(f"/users/{user_id}")
     assert get_response.status_code == 200
-    assert get_response.json()["name"] == "Jane Doe"
+    user_data = get_response.json()
+    assert user_data["name"] == "Jane Doe"
+    assert user_data["total_xp"] == 0
+    assert user_data["level"] == 1
 
 
 def test_create_user_duplicate_email_rejected(client):

@@ -19,6 +19,8 @@ class User(UserBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     email: EmailStr = Field(unique=True, index=True, nullable=False, max_length=255)
     hashed_password: str = Field(nullable=False)
+    total_xp: int = Field(default=0, nullable=False, ge=0)
+    level: int = Field(default=1, nullable=False, ge=1)
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
         nullable=False,
@@ -33,4 +35,6 @@ class UserCreate(SQLModel):
 
 class UserRead(UserBase):
     id: int
+    total_xp: int = 0
+    level: int = 1
     created_at: datetime

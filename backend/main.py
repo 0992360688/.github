@@ -10,6 +10,11 @@ from models.progress import Progress  # noqa: F401 - registers table with SQLMod
 from models.bug_trigger import BugTrigger  # noqa: F401 - registers table with SQLModel metadata
 from models.spark_term import SparkTerm  # noqa: F401 - registers table with SQLModel metadata
 from models.byte_fact import ByteFact  # noqa: F401 - registers table with SQLModel metadata
+from models.challenge import Challenge  # noqa: F401 - registers table with SQLModel metadata
+from models.completed_challenge import CompletedChallenge  # noqa: F401 - registers table with SQLModel metadata
+from models.badge import Badge  # noqa: F401 - registers table with SQLModel metadata
+from models.user_badge import UserBadge  # noqa: F401 - registers table with SQLModel metadata
+from models.certificate import Certificate  # noqa: F401 - registers table with SQLModel metadata
 from routes import (
     user_router,
     module_router,
