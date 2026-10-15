@@ -2,15 +2,14 @@
 
 import { ModeProvider, useMode } from "@/context/ModeContext";
 import ModeSwitch from "@/app/components/mentor-mode/ModeSwitch";
+import MyDoubts from "@/app/components/mentor-mode/MyDoubts";
+import MentorDashboard from "@/app/components/mentor-mode/MentorDashboard";
 
 function Screen() {
   const { mode } = useMode();
-  // Placeholders until Task 14 merges; then this becomes <MyDoubts /> / <MentorDashboard />.
-  return (
-    <p className="font-display text-xl text-ink">
-      {mode === "learner" ? "Learner view goes here" : "Mentor view goes here"}
-    </p>
-  );
+  // Switching mode unmounts one view and mounts the other, and each loads fresh
+  // data when it appears — that's how the learner sees a new reply right away.
+  return mode === "learner" ? <MyDoubts /> : <MentorDashboard />;
 }
 
 export default function MentorModePage() {

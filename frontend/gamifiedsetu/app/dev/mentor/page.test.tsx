@@ -12,8 +12,7 @@ const REPLY = "Make sure the loop condition eventually becomes false.";
 describe("Mentor Mode page: full journey", () => {
   beforeEach(() => resetMockDoubts());
 
-  // Skipped until Task 14 (MentorDashboard) merges and the page shows the real views.
-  it.skip("learner asks → mentor replies → learner sees the reply", async () => {
+  it("learner asks → mentor replies → learner sees the reply", async () => {
     const user = userEvent.setup();
     render(<MentorModePage />);
 
